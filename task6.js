@@ -1,24 +1,25 @@
 class FastDataStructure {
-  #data = [];
-  #hashmap = {};
+  #data = []; // Here we'll store initial elements
+  #hashmap = {}; // A hashmap that maps indices to elements
 
   constructor(data) {
-    this.#data = data;
+    this.#data = data; // Initialize the array
   }
 
   #calcSize() {
-    return this.#data.length;
+    return this.#data.length; // Private method to return current length of the array.
   }
 
   myPush(element) {
-    this.#data.push(element);
-    this.#hashmap[this.#calcSize() - 1] = element;
+    this.#data.push(element); // Save element in the array
+    this.#hashmap[this.#calcSize() - 1] = element; // Map the index for that element
   }
 
   getAll() {
     return this.#data;
   }
 
+  //Swap the last element with the element designated for deletion, then pop the designated element.
   myPop(idx) {
     const lastIdx = this.#calcSize() - 1;
     let temp = this.#data[lastIdx];

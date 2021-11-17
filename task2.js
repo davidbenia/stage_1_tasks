@@ -9,6 +9,12 @@ function minSplit(amount) {
     five = 0,
     one = 0;
 
+  /*
+  For each of the coins, we check if the "amount" is divisible by the coin.
+  If it is, then count how many coins fit (update the counter), subtract sum of those coins from "amount" and continue checking for the following coins.
+  If the final "amount" is more than 0 and less than 5, all previous coin checks finished and now we simply increase the "one" counter by the remaining "amount", no need to check if it's divisible by 1.
+  */
+
   if (amount / 50 > 0) {
     fifty = Math.floor(amount / 50);
     amount = amount - 50 * Math.floor(amount / 50);
